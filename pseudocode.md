@@ -127,10 +127,18 @@
    - **Účel**: Rozdělí zaměstnance do kategorií a spočítá počet výskytu křestních jmén celkově i rozděleně v kategoriích.
    - **Proces**:
      - Inicializuj objekt categories s klíči: all, male, female, femalePartTime, maleFullTime
-     - Iteruj přes každého zaměstnance v poli:
-        - Použij incrementNameCount pro inkrementaci v různých kategoriích.
-        - Rozhodni o kategorii na základě pohlaví a pracovní zátěže.
+     - Pro všechny zaměstnance v poli:
+        - Inkrementuj počet výskytů jména zaměstnance v kategorii all: použij incrementNameCount
+        - Pokud je zaměstnanec muž:
+            - Inkrementuj počet v kategorii male: použij incrementNameCount
+            - Pokud je workload zaměstnance 40:
+                -  inkrementuj také v maleFullTime: použij incrementNameCount
+        - Pokud je zaměstnanec žena:    
+            - Inkrementuj počet v kategorii female: použij incrementNameCount
+            - Pokud workload zaměstnance není 40:
+                -  inkrementuj také v femalePartTime: použij incrementNameCount
      - Vrať aktualizovaný objekt categories           
+         
 
 ### 15. `transformToChartData()`
    - **Účel**: Převede seskupená data o jménech a jejich počtech na pole objektů podle požadovaného formátu.
