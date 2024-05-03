@@ -1,4 +1,4 @@
-## Pseudokód pro domácí úkol 4.
+## Pseudokód pro domácí úkol 5.
 
 ### Přehled
 - Skript slouží k generování náhodných zaměstnanců a k vytváření statistik o zaměstnaneckých datech
