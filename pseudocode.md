@@ -137,7 +137,7 @@
    - **Proces**: Inicializuj prázdný objekt chartData.
      - Pro každou kategorii v poli counts:
         - Převeď mapu jmen a počtů na pole objektů {label, value}.
-        - Seřaď toto pole podle sestupně.
+        - Seřaď toto pole podle počtu výskytu sestupně.
      - Vrať chartData.    
 
 ### 16. `getEmployeeChartContent()`
