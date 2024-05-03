@@ -94,27 +94,27 @@
      - Pokud `count < 0`, vyhoď chybu "Zadejte kladné číslo.".
      - Pokud `minAge < 18` nebo `minAge > maxAge`, vyhoď chybu "Neplatný věkový intervál.".
      - Pro každý index od 0 do count - 1:
-     - Získej pohlaví let gender = getGender();
-     - Inicializuj let name, surname;
-     - Pokud pohlaví je žena 
-        (gender === "female") {
-        - potom použij funkce pro generování ženských jmen a příjmení
-        - name = getFemaleName();
-        - surname = getFemaleSurname();
-      }
-     - Jinak generuj mužská jména příjmení{
-        - name = getMaleName();
-        - surname = getMaleSurname();
-      }
+        - Získej pohlaví let gender = getGender();
+        - Inicializuj let name, surname;
+        - Pokud pohlaví je žena 
+            (gender === "female") {
+            - potom použij funkce pro generování ženských jmen a příjmení
+            - name = getFemaleName();
+            - surname = getFemaleSurname();
+        }
+        - Jinak generuj mužská jména příjmení{
+            - name = getMaleName();
+            - surname = getMaleSurname();
+        }
 
-     -Vytvoř objekt employee a přidej ho do seznamu employees.
-     - employee = {
-        - gender: gender,
-        - Získej datum narození birthdate: getBirthday(minAge, maxAge),
-        - name: name,
-        - surname: surname,
-        - Získej zátěž práce  workload: getWorkload()
-      };
+        -Vytvoř objekt employee a přidej ho do seznamu employees.
+        - employee = {
+            - gender: gender,
+            - Získej datum narození birthdate: getBirthday(minAge, maxAge),
+            - name: name,
+            - surname: surname,
+            - Získej zátěž práce  workload: getWorkload()
+        };
 
      - Vrať employees
 
@@ -127,16 +127,9 @@
    - **Účel**: Rozdělí zaměstnance do kategorií a spočítá počet výskytu křestních jmén celkově i rozděleně v kategoriích.
    - **Proces**:
      - Inicializuj objekt categories s klíči: all, male, female, femalePartTime, maleFullTime
-     - Pro všechny zaměstnance v poli:
-        - Inkrementuj počet výskytů jména zaměstnance v kategorii all
-        - Pokud je zaměstnanec muž:
-            - Inkrementuj počet v kategorii male
-            - Pokud je workload zaměstnance 40:
-                -  inkrementuj také v maleFullTime
-        - Pokud je zaměstnanec žena:    
-            - Inkrementuj počet v kategorii female
-            - Pokud workload zaměstnance není 40:
-                -  inkrementuj také v femalePartTime
+     - Iteruj přes každého zaměstnance v poli:
+        - Použij incrementNameCount pro inkrementaci v různých kategoriích.
+        - Rozhodni o kategorii na základě pohlaví a pracovní zátěže.
      - Vrať aktualizovaný objekt categories           
 
 ### 15. `transformToChartData()`
