@@ -182,13 +182,14 @@ function generateEmployeeData(dtoIn) {
   return employees;
 }
 
-// Increments the count for a given name if it exists if not, initializes the count to 1.
+// Increments the count for a given name if it exists if not, initializes the count to 0 and adds 1.
 function incrementNameCount(nameCounts, name) {
   nameCounts[name] = (nameCounts[name] || 0) + 1;
 }
 
 // Iterates through a list of employees, categorizes them by gender and workload, and counts the occurrences of each name.
 function categorizeAndCountEmployees(employees) {
+  const FULL_TIME = 40;
   const categories = {
     all: {},
     male: {},
@@ -200,14 +201,14 @@ function categorizeAndCountEmployees(employees) {
   employees.forEach(employee => {
     incrementNameCount(categories.all, employee.name);
 
-    if (employee.gender === "male") {
+    if (employee.gender == "male") {
       incrementNameCount(categories.male, employee.name);
-      if (employee.workload === 40) {
+      if (employee.workload == FULL_TIME) {
         incrementNameCount(categories.maleFullTime, employee.name);
       }
     } else {
       incrementNameCount(categories.female, employee.name);
-      if (employee.workload !== 40) {
+      if (employee.workload != FULL_TIME) {
         incrementNameCount(categories.femalePartTime, employee.name);
       }
     }
